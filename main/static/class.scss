@@ -1,0 +1,468 @@
+/*
+$text: #2c1810;
+$accent: #cca05e;
+$BG: #f8f3ed;
+$nav: #f8f3ed;
+*/
+$text: #2c1810;
+$accent: #cca05e;
+$BG: #f8f3ed;
+$nav: #f8f3ed;
+
+body{
+    background-color: $BG;
+    font-family: 'Montserrat';
+    width: 100%;
+    height: 100%;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background-color: $nav;
+    width: 100vw;
+    height: 8vh;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 3px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        width: 60vw;
+        li{
+            list-style: none;
+        }
+    }
+
+}
+.NavBtn{
+   
+    color: $accent;
+    vertical-align: middle;
+    text-decoration: none;
+    
+}
+.NavDiv{
+//    background-color: $accent;
+   padding: 0.7em 1.4em;
+//    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+    font-weight: bold;
+    display: flex;
+    border-radius: 10em;
+    align-items: center;
+    transition-duration: 0.2s;
+    opacity: 0.6;
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.2s;
+    }
+}
+.BtnIcon{
+    aspect-ratio: 1;
+    padding-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    path{
+        fill: $accent;
+    }
+}
+
+
+  .container {
+    padding-top: 1.5em;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+    small {
+      font-size: 0.5em;
+    }
+  }
+
+  .responsive-table {
+    li {
+      border-radius: 3px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      transition-duration: 0.3s;
+      &:hover{
+        padding: 32px 35px;
+        transition-duration: 0.3s;
+        font-size: 16px;
+        }
+
+    }
+    .table-header {
+      background-color: $accent;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .table-row {
+      background-color: #f8f3ed;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.15);
+    }
+    .col-1 {
+      flex-basis: 8%;
+    }
+    .col-2 {
+      flex-basis: 90%;
+    }
+    .col-3 {
+      flex-basis: 10%;
+    }
+    
+    @media all and (max-width: 767px) {
+      .table-header {
+        display: none;
+      }
+      .table-row{
+        
+      }
+      li {
+        display: block;
+      }
+      .col {
+        
+        flex-basis: 100%;
+        
+      }
+      .col {
+        display: flex;
+        padding: 10px 0;
+        &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+
+      }
+    }
+  }
+
+.topBG{
+    width: 100%;
+    margin-bottom: 3.5em;
+    border-radius: 1em;
+    background-color: #f0e5d3;
+    padding: 1em 2em;
+    overflow-y: hidden;
+}
+.gead{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.input{
+  margin: 0.4em auto;
+  background-color: #f8f3ed;
+  transition-duration: 0.5s;
+  border: none;
+  &:focus{
+    outline: none;
+    border: none;
+  }
+}
+
+.headTitle{
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-left: 0.7em;
+    margin-bottom: 0.2em;
+}
+.codeTitle{
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  margin-bottom: 4em;
+  margin-left: 1.6em;
+}
+.wrap{
+    width: 85vw;
+    margin: 3.5em auto 0 auto;
+}
+/*
+.TopCard::before{
+    content: '';
+    background-color: #f0e5d3;
+    margin: 10em auto;
+    width: 85vw;
+    height: 14em;
+    border-radius: 1em;
+    position: relative;
+
+}
+*/
+.hidden{
+    display: none;
+}
+
+.cover{
+    aspect-ratio: 0.625;
+    height: 17em;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 17px;
+    transition-duration: 0.7s;
+    background-color: #f8f3ed;
+    &:hover{
+        transition-duration: 0.7s;
+        padding-right: 13em;
+        height: 20em;
+        border-radius: 0.8em;
+    }
+}
+.BookCard{
+    transition-duration: 0.7s;
+    position: relative;
+    transition-duration: 0.7s;
+    &:hover{
+        background-color: $BG;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 17px;
+        transition-duration: 0.7s;
+        //padding-right: 12em;
+        border-radius: 0.8em;
+    }
+}
+.dead{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.5s;
+    }
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.percent{
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.5s;
+    }
+}
+
+.tabWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add{
+  text-decoration: none;
+  color: $accent;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0.3em 0.5em;
+  border-radius: 0.45em;
+  transition: 0.6s;
+  i{
+    font-size: 1.6em;
+    margin-right: 0.3em;
+  }
+  &:hover{
+    transition: 0.6s;
+    font-size: 1.1em;
+    background-color: #ecddc8;
+  }
+}
+
+.tab {
+    margin-top: 0.7em;
+    overflow: hidden;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: #f8f3ed;
+    border-radius: 0.6em;
+    margin-right: 1.4em;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 13px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #cca05e;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #cca05e;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+  }
+
+/*
+.topWrap{
+    position: absolute;
+
+    top: -7em;
+    margin: 0em 3.7em;
+    display: grid;
+    column-gap: 7em;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(0, min(100%/3, max(15))));
+}
+.book-name{
+    font-size: 1.4em;
+    rotate: 270deg;
+
+}
+.sideName{
+display: flex;
+}
+*/
+.Book{
+ /* first item at start, last at end */
+    height: 14em;
+    
+}
+
+.bottom{
+    width: 100%;
+    margin-top: 5.5em;
+    display: flex;
+    justify-content: space-evenly;
+    transform: translateY(-80%);
+}
+.RightCard{
+    border-radius: 1em;
+    width: 39%;
+    height: 20em;
+    background-color: #f0e5d3;
+    transition-duration: 0.4s;
+    &:hover{
+        width: 42%;
+        height: 19.5em;
+        transition-duration: 0.4s;
+    }
+}
+.LeftCard{
+    height: 20em;
+    border-radius:1em;
+    width: 39%;
+    background-color: #f0e5d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.4s;
+    &:hover{
+        width: 42%;
+        height: 19.5em;
+        transition-duration: 0.4s;
+    }
+}
+
+.topWrap{
+    //top: -5.5em;
+    margin-bottom: 5.5em;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    transform: translateY(-150%);
+}
+
+.sideName{
+    display: flex;
+}
+.book-name{
+    writing-mode:vertical-rl;
+    transform: rotate(180deg);
+    padding-top: 0.2em;
+    padding-left: 0;
+    height: 8.2em;
+    width: 1.25em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    overflow: hidden;   
+}
+
+.Book{
+    position: relative;
+}
+
+.gauge {
+    position: relative;
+    border-radius: 50%/100% 100% 0 0;
+    background-color: var(--color, #a22);
+    overflow: hidden;
+    width: 350px;
+    --color: #cca05e;
+    --background:#f8f3ed;
+    transition-duration: 0.4s;
+    &:hover{
+        width: 380px;
+        transition-duration: 0.4s;
+    }
+}
+
+.gauge:before{
+    content: "";
+    display: block;
+    padding-top: 50%;   /* ratio of 2:1*/
+}
+.gauge .chart {
+  overflow: hidden;
+}
+.gauge .mask {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  top: 40%;
+  background-color: #f0e5d3;
+  border-radius: 50%/100% 100% 0 0;
+}
+
+.gauge .percentage {
+    position:  absolute;
+    top: -1px;
+    left: -1px;
+    bottom: 0;
+    right: -1px;
+    background-color: var(--background, #aaa);
+    transform:rotate(var(--rotation)); 
+    transform-origin: bottom center; 
+    transition-duration: 600;
+}
+.gauge .value {
+  position:absolute; bottom:0%; left:0;   
+  width:100%; 
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding-bottom: 0.6em;
+}
+
+.gauge .min {
+  position:absolute; 
+  bottom:0; left:5%;   
+}
+.gauge .max {
+  position:absolute; 
+  bottom:0; right:5%;   
+ }

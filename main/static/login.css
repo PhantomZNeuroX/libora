@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat";
+  align-items: center;
+  background-color: #f8f3ed;
+}
+
+.card {
+  top: 50vh;
+  position: absolute;
+  transform: translateY(-50%);
+  height: 25em;
+  width: 25em;
+  position: relative;
+  background-color: #f0e5d3;
+  transition-duration: 0.5s;
+  /*
+   &:hover{
+       height: 27em;
+       width: 27em;
+       border-radius: 5em;
+       transition-duration: 0.5s;
+   }
+   */
+}
+
+.titl {
+  padding-top: 0.7em;
+  padding-bottom: 0.5em;
+}
+
+.input {
+  margin: 0.5em auto;
+  background-color: #f8f3ed;
+  transition-duration: 0.5s;
+}
+.input:hover {
+  border-radius: 0.7em;
+  transition-duration: 0.5s;
+  border-color: #cca05e;
+  border-width: 0.07em;
+}
+
+.sub {
+  margin-top: 1em;
+  position: absolute;
+  right: 0;
+  width: 6em;
+  height: 2.5em;
+  transition-duration: 0.5s;
+}
+.sub:hover {
+  width: 6.6em;
+  height: 2.5em;
+  border-radius: 0.7em;
+  transition-duration: 0.5s;
+  border-color: #cca05e;
+  border-width: 0.07em;
+}
+
+.submitWrap {
+  position: relative;
+}
+
+.msg {
+  position: absolute;
+  top: 1.5em;
+  left: 0.5em;
+}/*# sourceMappingURL=login.css.map */

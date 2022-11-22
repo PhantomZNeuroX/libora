@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Register</title>
+</head>
+<body>
+    <div class="card" style="border-radius: 1em; transform: translateY(-70%);">
+        <div class="card-content" style="background-color: #f0e5d3;">
+          <div class="content">
+    <form method="POST" action="/register/teacher">
+        {% csrf_token %}
+        <h1 class="titl" style="font-family: 'Poppins', sans-serif; font-weight:700;">Register</h1>
+        <input  class="input" type="text" name="fname" placeholder="First Name">
+        <input  class="input" type="text" name="lname" placeholder="Last Name">
+        <input  class="input" type="email" name="email" placeholder="Email">
+        <input  class="input" type="text" name="school" placeholder="School ">
+        <input  class="input" type="password" name="pass1" placeholder="Password">
+        <input  class="input" type="password" name="pass2" placeholder="Password Confirm">
+        <input class="button is-light" style="margin: 1em 0 0.5em 0" type="submit">
+        <label>{{msg}}</label>
+    </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{book.name}}</title>
+</head>
+<body>
+    <h1>{{book.name}}</h1>
+    Students Completed:
+    {% for y in students %}
+    <h3>{{y.first_name}} {{y.last_name}}</h3>
+    {% endfor %}
+    <br>
+    
+    Students not Completed:
+    {% for y in no_students %}
+    <h3 style="color: red;">{{y.first_name}} {{y.last_name}}</h3>
+    {% endfor %}
+    <br>
+    <br>
+    
+    <a href='/media/{{book.book.name}}'>Download</a> <br>
+    <form method="POST" action="/class/book/student/{{book.id}}">
+        {% csrf_token %}
+
+    </form>
+</body>
+</html>

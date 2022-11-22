@@ -1,0 +1,455 @@
+/*
+$text: #2c1810;
+$accent: #cca05e;
+$BG: #f8f3ed;
+$nav: #f8f3ed;
+*/
+$text: #2c1810;
+$accent: #cca05e;
+$BG: #f8f3ed;
+$nav: #f8f3ed;
+
+.body{
+    background-color: $BG;
+
+    font-family: 'Montserrat';
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background-color: $nav;
+    width: 100vw;
+    height: 8vh;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 3px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        width: 60vw;
+        li{
+            list-style: none;
+        }
+    }
+
+}
+.NavBtn{
+   
+    color: $accent;
+    vertical-align: middle;
+    text-decoration: none;
+    
+}
+.NavDiv{
+//    background-color: $accent;
+   padding: 0.7em 1.4em;
+//    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+    font-weight: bold;
+    display: flex;
+    border-radius: 10em;
+    align-items: center;
+    transition-duration: 0.2s;
+    opacity: 0.6;
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.2s;
+    }
+}
+.BtnIcon{
+    aspect-ratio: 1;
+    padding-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    path{
+        fill: $accent;
+    }
+}
+.topBG{
+    width: 85vw;
+    height: 14em;
+    border-radius: 1em;
+    background-color: #f0e5d3;
+    margin: 9.5em auto 0 auto;
+}
+/*
+.TopCard::before{
+    content: '';
+    background-color: #f0e5d3;
+    margin: 10em auto;
+    width: 85vw;
+    height: 14em;
+    border-radius: 1em;
+    position: relative;
+
+}
+*/
+.hidden{
+    display: none;
+}
+
+.cover{
+    aspect-ratio: 0.625;
+    height: 17em;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 17px;
+    transition-duration: 0.7s;
+    background-color: #f8f3ed;
+    position: absolute;
+}
+.Book{
+    /* first item at start, last at end */
+       height: 14em;
+       
+   }
+.btn{
+    margin-left: 0.5em;
+    padding: 0.4em;
+    text-decoration: none;
+    color: $accent;
+    background-color: #f0e5d3;
+    border-radius: 0.3em;
+}
+.BookCard{
+    transition-duration: 0.7s;
+    position: relative;
+    aspect-ratio: 0.625;
+    height: 17em;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 17px;
+    transition-duration: 0.7s;
+    background-color: #f8f3ed;
+    transition-duration: 0.7s;
+    width: 10.625em;
+    display: flex;
+
+    justify-content: space-between;
+    &:hover{
+        background-color: $BG;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 17px;
+        transition-duration: 0.5s;
+        width: 21.8em;
+        border-radius: 0.8em;
+        
+            .cov2{
+            p{
+            width: 9.3em;
+            }
+            }
+    }
+}
+
+
+.BIG{
+    font-size: 8em;
+    text-align: center;
+
+}
+
+.small{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0.2em;
+    
+}
+
+
+.cov2{
+    width: 50%;
+    p{
+        color: $accent;
+        height: 13em;
+        margin-top: 0.7em;
+        margin-left: 0.3em;
+        margin-right: 0.5em;
+        width: 3em;
+        overflow-y: hidden;
+        transition: 0.5s;
+        margin-bottom: 1em;
+    }
+    transition: 0.5s;
+    
+    
+}
+.dead{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.5s;
+    }
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.percent{
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.5s;
+    }
+}
+
+/*
+.topWrap{
+    position: absolute;
+
+    top: -7em;
+    margin: 0em 3.7em;
+    display: grid;
+    column-gap: 7em;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(0, min(100%/3, max(15))));
+}
+.book-name{
+    font-size: 1.4em;
+    rotate: 270deg;
+
+}
+.sideName{
+display: flex;
+}
+*/
+
+
+.bottom{
+    width: 100%;
+    margin-top: 5.5em;
+    display: flex;
+    justify-content: space-evenly;
+    transform: translateY(-80%);
+}
+.RightCard{
+    height: 20em;
+    border-radius:1em;
+    width: 39%;
+    background-color: #f0e5d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.4s;
+    &:hover{
+        width: 42%;
+        height: 19.5em;
+        transition-duration: 0.4s;
+    }
+}
+.LeftCard{
+    height: 20em;
+    border-radius:1em;
+    width: 39%;
+    background-color: #f0e5d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.4s;
+    &:hover{
+        width: 42%;
+        height: 19.5em;
+        transition-duration: 0.4s;
+    }
+}
+
+.pText{
+    margin-top: 1em;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+.topWrap{
+    //top: -5.5em;
+    margin-bottom: 5.5em;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    transform: translateY(-150%);
+}
+
+.sideName{
+    display: flex;
+}
+.book-name{
+    writing-mode:vertical-rl;
+    transform: rotate(180deg);
+    padding-top: 0.2em;
+    padding-left: 0;
+    height: 8.2em;
+    width: 1.25em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    overflow: hidden;   
+}
+
+.Book{
+    position: relative;
+}
+
+.gauge {
+    position: relative;
+    border-radius: 50%/100% 100% 0 0;
+    background-color: var(--color, #a22);
+    overflow: hidden;
+    width: 350px;
+    --color: #cca05e;
+    --background:#f8f3ed;
+    transition-duration: 0.4s;
+    &:hover{
+        width: 380px;
+        transition-duration: 0.4s;
+    }
+}
+
+.gauge:before{
+    content: "";
+    display: block;
+    padding-top: 50%;   /* ratio of 2:1*/
+}
+.gauge .chart {
+  overflow: hidden;
+}
+.gauge .mask {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  top: 40%;
+  background-color: #f0e5d3;
+  border-radius: 50%/100% 100% 0 0;
+}
+
+.gauge .percentage {
+    position:  absolute;
+    top: -1px;
+    left: -1px;
+    bottom: 0;
+    right: -1px;
+    background-color: var(--background, #aaa);
+    transform:rotate(var(--rotation)); 
+    transform-origin: bottom center; 
+    transition-duration: 600;
+}
+.gauge .value {
+  position:absolute; bottom:0%; left:0;   
+  width:100%; 
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding-bottom: 0.6em;
+}
+
+.gauge .min {
+  position:absolute; 
+  bottom:0; left:5%;   
+}
+.gauge .max {
+  position:absolute; 
+  bottom:0; right:5%;   
+ }
+
+ .mobile{
+    display: none;
+}
+
+@media screen and (max-width:800px){
+    .LeftCard{
+        height: 18em;
+        border-radius:1em;
+        width: 92.5%;
+        background-color: #f0e5d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        &:hover{
+            width: 92.5%;
+            height: 18em;
+        }
+    }
+    
+    .RightCard{
+        height: 18em;
+        border-radius:1em;
+        width: 92.5%;
+        background-color: #f0e5d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4em auto;
+        &:hover{
+            width: 92.5%;
+            height: 18em;
+        }
+    }
+
+    .bottom{
+        width: 100%;
+        margin-top: 0.4em;
+        transform: translateY(-7%);
+        display: block;
+    }
+    .body{
+        overflow-x: hidden;
+    }
+    .book-nameM{
+        color: $accent;
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        font-size: 1em;
+        margin-top: 0.3em;
+        text-shadow: 1px 1px 2px rgba(240, 229, 211,0.4);
+
+        overflow: show;   
+    }
+
+    .desk{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .HamMenu{
+        margin-left: 94%;
+        margin-top: 0.1em;
+    }
+    nav{
+        height: 6vh;
+    }
+    .cover{
+        aspect-ratio: 0.625;
+        height: 14em;
+        position: static;
+    }
+    .topWrap{
+        padding: 1.7em;
+        width: 100%;
+        height: 80vh;
+        margin: 1.5em auto;
+        transform: translateY(0%);
+        display:grid;
+        grid-template-columns: 11.5em 11.5em;
+        grid-row: auto auto;
+        grid-column-gap: 0.1em;
+        grid-row-gap: 0.1em;
+        .BookM{
+            border-radius:10px;
+            align-items:center;
+            justify-content:center;
+            font-family:sans-serif;
+
+            .btnM{
+                margin-left: 2.7em;
+                margin-top: 1em;
+                padding: 0.4em;
+                text-decoration: none;
+                color: $accent;
+                background-color: #f0e5d3;
+                border-radius: 0.3em;
+                display: none;
+            }
+        }
+    }
+}
