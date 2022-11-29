@@ -47,7 +47,7 @@ def registerT(request):
         if not User.objects.filter(email=post['email']):
             if post['pass1'] == post['pass2']:
                 user = User.objects.create_user(username=post['email'], first_name=post['fname'], email=post['email'], last_name=post['lname'], password=post['pass1'])
-                teach = teacher.objects.create(user=user,school=post['school'],subject=post['sub'] )
+                teach = teacher.objects.create(user=user,school=post['school'])
                 clas.objects.create(teacher=teach, name=teacher.user.first_name + "'s Class")
                 return redirect('/login')
             else:
@@ -60,13 +60,16 @@ def JoinClass(request):
     if request.method == 'POST':
         post = request.POST
         user = User.objects.get(email=request.user.email)
-        join = clas.objects.get(code=post['code'])
-        join.students.add(user)
-        prof = profile.objects.get(user=user)
-        prof.clas = join
-        prof.save()
-        print(join.students.all())
-        return redirect('/')
+        try:
+            join = clas.objects.get(code=post['code'])
+            join.students.add(user)
+            prof = profile.objects.get(user=user)
+            prof.clas = join
+            prof.save()
+            print(join.students.all())
+            return redirect('/')
+        except:
+            return render(request,'JoinClass.html',{'msg':'Incorrect Code'})
     else:
         if not request.user.is_authenticated:
             return redirect('/login')
@@ -149,12 +152,12 @@ def dashboardT(request):
     if not teacher.objects.filter(user=user):
         return redirect('/dashboard')
     teach = teacher.objects.get(user=user)
-    clas = teach.clas
-    books = ebook.objects.filter(clas=clas)
-    lead = profile.objects.filter(clas=clas).order_by('-score')
-    profs = profile.objects.filter(clas=clas).order_by('user')
+    classs = clas.objects.get(teacher=teach)
+    books = ebook.objects.filter(clas=classs)
+    lead = profile.objects.filter(clas=classs).order_by('-score')
+    profs = profile.objects.filter(clas=classs).order_by('user')
     
-    return render(request,'dashboardt.html',{'class':clas,'books':books, 'lead':lead,'profs':profs, 'goal':clas.goal})
+    return render(request,'dashboardt.html',{'class':classs,'books':books, 'lead':lead,'profs':profs, 'goal':classs.goal})
 
     
 def MyClass(request):
@@ -166,6 +169,8 @@ def logoutt(request):
     return redirect('/')
 
 def profiles(request, id):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     if User.objects.filter(id = id):
         user = User.objects.get(id=id)
         prof = profile.objects.get(user=user)
@@ -349,14 +354,22 @@ def progress(request):
 def leaderboard(request):
     if not request.user.is_authenticated:
         return redirect('/login')
-    globall = profile.objects.all().order_by('-score')
+    globalll = profile.objects.all().order_by('-score')
     try:
         user = User.objects.get(id=request.user.id)
         prof = profile.objects.get(user=user)
         local = profile.objects.filter(location = prof.location).order_by('-score')
     except:
         local = profile.objects.all().order_by('-score')
-    return render(request, 'leaderboard.html', {'global':globall, 'local':local})
+    globall = []
+    for x in globalll:
+        if x.words > 10000:
+            globall.append(x)
+    locall = []
+    for x in local:
+        if x.words > 10000:
+            locall.append(x)            
+    return render(request, 'leaderboard.html', {'global':globall, 'local':locall})
 
 def read_goal(request):
     if request.method != 'POST':
@@ -373,21 +386,21 @@ def classView(request):
     if not request.user.is_authenticated:
         return redirect('/login')
     user = User.objects.get(id=request.user.id)
-    try:
+    if profile.objects.filter(user=user):
         prof = profile.objects.get(user=user)
-        clas = prof.clas
-    except:
+        classs = prof.clas
+    elif teacher.objects.filter(user=user):
         teach = teacher.objects.get(user=user)
-        clas = clas.objects.get(teacher=teach)
-    lead = profile.objects.filter(clas=clas).order_by('-score')
-    profs = profile.objects.filter(clas=clas).order_by('user')
-    books = ebook.objects.filter(clas=clas)
+        classs = clas.objects.get(teacher=teach)
+    lead = profile.objects.filter(clas=classs).order_by('-score')
+    profs = profile.objects.filter(clas=classs).order_by('user')
+    books = ebook.objects.filter(clas=classs)
     avg = 0
-    for x in clas.students.all():
+    for x in classs.students.all():
         y = profile.objects.get(user = x)
         avg = avg + y.score
-    clas.avg = avg/len(clas.students.all())
-    clas.save()
+    classs.avg = avg/len(classs.students.all())
+    classs.save()
     try:
         filtered = []
         for x in books:
@@ -399,13 +412,17 @@ def classView(request):
             else:
                 filtered.append(x)
     except:
-        return render(request,'class.html',{'class':clas,'books':books, 'lead':lead,'profs':profs})
+        return render(request,'class.html',{'class':classs,'books':books, 'lead':lead,'profs':profs})
 
-    return render(request,'class.html',{'class':clas,'books':filtered, 'lead':lead,'profs':profs})
+    return render(request,'class.html',{'class':classs,'books':filtered, 'lead':lead,'profs':profs})
 
 def StudentView(request, id):
+    user = User.objects.get(id=id)
+    if not request.user.is_authenticated:
+        return redirect('/login')
+    if not teacher.objects.filter(user=user):
+        return redirect('/dashboard')
     try:
-        user = User.objects.get(id=id)
         prof = profile.objects.get(user=user)
     except:
         return HttpResponse('404 Not found')

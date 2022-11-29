@@ -61,11 +61,22 @@
         </ul>        
     </nav>
     <nav class="mobile">
-      <a class="NavBtn"  href="">
+      <div class="navbar">
+        <div class="containerr nav-container">
+          <input class="checkbox HamMenu" type="checkbox" name="" id="" >
           <div class="NavDiv">
-          <svg class="BtnIcon HamMenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            <svg class="BtnIcon checkbox HamMenu" style="opacity: 1;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </div>
+            
+          <div class="menu-items" style="z-index: 123;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/class">Class</a></li>
+            <li><a href="/leaderboards">Leaderboard</a></li>
+            <li><a href="/logout">Logout</a></li>
           </div>
-      </a>
+        </div>
+      </div>
 </nav>
 <div class="HeadWrap">
   <div class="CovWRap">
@@ -95,6 +106,7 @@
   </div>
 </div>
 <div class="wrap">
+  <div style="display: flex; width:100%;justify-content:center;align-items:center;">
 <div class="topBG">
   <div class="tab">
       <button id="glob" class="tablinks" onclick="openCity(event, 'comp')">Completed</button>
@@ -137,7 +149,7 @@
           </ul>
         </div>
 </div>
-
+</div>
 </div>
 
 

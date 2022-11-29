@@ -12,7 +12,7 @@
     <title>{{prof.user.first_name}}</title>
 </head>
 <body class="body" style="overflow-x: hidden;">
-    <nav>
+    <nav class="desk">
         <ul>
             <li>
                 <a href="/" class="NavBtn">
@@ -58,7 +58,24 @@
         </li>
         </ul>        
     </nav>
-    
+    <nav class="mobile">
+      <div class="navbar">
+          <div class="containerr nav-container">
+            <input class="checkbox HamMenu" type="checkbox" name="" id="" >
+            <div class="NavDiv">
+              <svg class="BtnIcon checkbox HamMenu" style="opacity: 1;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+              </div>
+              
+            <div class="menu-items" style="z-index: 123;">
+              <li><a href="/">Home</a></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/class">Class</a></li>
+              <li><a href="/leaderboards">Leaderboard</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </div>
+          </div>
+        </div>
+</nav>
     <div class="wrap">
 
         <h1 class="headTitle">{{prof.user.first_name}} {{prof.user.last_name}}</h1>
@@ -71,7 +88,7 @@
         </div>
     </div>
 
-
+<div class="bottomWrap">
   <div class="bottom">
     <div class="LeftCard">
     <div class="LeftCardWrap">
@@ -119,6 +136,7 @@
       <canvas id="myChartRead"></canvas>
     </div>
   </div>
+</div>
 </div>
 <!--
         <div class="WrapGraph">
@@ -193,9 +211,9 @@
                   </li>
                   {% for x in profs %}
                   <li class="table-row">
-                    <div class="col col-1" data-label="Job Id">{{forloop.counter}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{x.user.first_name}} {{x.user.last_name}}</div>
-                    <div class="col col-3" data-label="Amount"></div>
+                    <div class="col col-1" data-label="No.">{{forloop.counter}}</div>
+                    <div class="col col-2" data-label="First Name">{{x.user.first_name}} {{x.user.last_name}}</div>
+                    <div class="col col-3" data-label=""></div>
                   </li>
                   {% endfor %}
                 </ul>
@@ -220,7 +238,10 @@
             data: yValues
             }]
         },
-  options:{}
+  options:{
+    responsive: true,
+    maintainAspectRatio: false,
+  }
 });
 
 
@@ -241,7 +262,10 @@
             data: yValues
             }]
         },
-  options:{}
+  options:{
+    responsive: true,
+    maintainAspectRatio: false,
+  }
 });
 
         var yValues = {{times}}
@@ -257,8 +281,12 @@
             data: yValues
             }]
         },
-  options:{}
+  options:{
+    responsive: true,
+    maintainAspectRatio: false,
+  }
 });
+
     </script>
      <script>
         window.onload = document.getElementById('glob').click();

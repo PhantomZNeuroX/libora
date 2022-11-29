@@ -21,8 +21,8 @@
         <form action="/login" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
         <h1 class="titl" style="font-family: 'Poppins', sans-serif; font-weight:700;">Login</h1>
-        <input class="input" type="email" name="email" placeholder="Email"> <br>
-        <input class="input" type="password" name="pass" placeholder="Password"><br>
+        <input class="input" type="email" name="email" placeholder="Email" required> <br>
+        <input class="input" type="password" name="pass" placeholder="Password" required><br>
         <div class="submitWrap">
              <input style="background-color: #f8f3ed;" type="submit"  class="button is-light sub">
              <label class="msg">{{msg}}</label>
@@ -33,5 +33,6 @@
 </div>
 </div>
 </div>
+<div style="width: 100%; height:100%;z-index:-999;position: absolute; background-color: #f8f3ed;left: 0;bottom: 0;;"></div>
 </body>
 </html>

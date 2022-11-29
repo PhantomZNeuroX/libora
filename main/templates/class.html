@@ -10,7 +10,7 @@
     <title>{{class.name}}</title>
 </head>
 <body>
-    <nav>
+    <nav class="desk">
         <ul>
             <li>
                 <a href="/" class="NavBtn">
@@ -56,9 +56,27 @@
         </li>
         </ul>        
     </nav>
+    <nav class="mobile">
+      <div class="navbar">
+          <div class="containerr nav-container">
+            <input class="checkbox HamMenu" type="checkbox" name="" id="" >
+            <div class="NavDiv">
+              <svg class="BtnIcon checkbox HamMenu" style="opacity: 1;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+              </div>
+              
+            <div class="menu-items" style="z-index: 123;">
+              <li><a href="/">Home</a></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/class">Class</a></li>
+              <li><a href="/leaderboards">Leaderboard</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </div>
+          </div>
+        </div>
+</nav>
     <div class="wrap">
     <h1 class="headTitle" style="margin-bottom: 1.4em;">{{class.name}}</h1>
-
+    <div style="display: flex; width:100%;justify-content:center;align-items:center;">
     <div class="topBG">
         <div class="tab">
             <button id="glob" class="tablinks" onclick="openCity(event, 'books')">Books</button>
@@ -76,9 +94,9 @@
               {% for x in books %}
               <a href="class/book/{{x.id}}" style="text-decoration: none;color:black;">
               <li class="table-row">
-                <div class="col col-1" data-label="Job Id">{{forloop.counter}}</div>
-                <div class="col col-2" data-label="Customer Name">{{x.name}}</div>
-                <div class="col col-3" data-label="Amount">{{x.deadline}}</div>
+                <div class="col col-1" data-label="No.">{{forloop.counter}}</div>
+                <div class="col col-2" data-label="Book Title">{{x.name}}</div>
+                <div class="col col-3" data-label="Deadline">{{x.deadline}}</div>
               </li>
             </a>
               {% endfor %}
@@ -96,9 +114,9 @@
                   </li>
                   {% for x in lead %}
                   <li class="table-row">
-                    <div class="col col-1" data-label="Job Id">{{forloop.counter}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{x.user.first_name}} {{x.user.last_name}}</div>
-                    <div class="col col-3" data-label="Amount">{{x.score}}</div>
+                    <div class="col col-1" data-label="No.">{{forloop.counter}}</div>
+                    <div class="col col-2" data-label="Student Name">{{x.user.first_name}} {{x.user.last_name}}</div>
+                    <div class="col col-3" data-label="Score">{{x.score}}</div>
                   </li>
                   {% endfor %}
                 </ul>
@@ -114,16 +132,16 @@
                   </li>
                   {% for x in profs %}
                   <li class="table-row">
-                    <div class="col col-1" data-label="Job Id">{{forloop.counter}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{x.user.first_name}} {{x.user.last_name}}</div>
-                    <div class="col col-3" data-label="Amount"></div>
+                    <div class="col col-1" data-label="No.">{{forloop.counter}}</div>
+                    <div class="col col-2" data-label="Student Name">{{x.user.first_name}} {{x.user.last_name}}</div>
+                    <div class="col col-3" data-label=" "></div>
                   </li>
                   {% endfor %}
                 </ul>
               </div>
         </div>
     </div>
-
+    </div>
     <script>
     window.onload = document.getElementById('glob').click();
     function openCity(evt, cityName) {

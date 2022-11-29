@@ -20,11 +20,11 @@
     <form method="POST" action="/register">
         {% csrf_token %}
         <h1 class="titl" style="font-family: 'Poppins', sans-serif; font-weight:700;">Register</h1>
-        <input class="input" type="text" name="fname" placeholder="First Name"> <br>
-        <input class="input" type="text" name="lname" placeholder="Last Name"><br>
-        <input class="input" type="email" name="email" placeholder="Email"><br>
-        <input class="input" type="password" name="pass1" placeholder="Password"><br>
-        <input class="input" type="password" name="pass2" placeholder="Password Confirm"><br>
+        <input class="input" type="text" name="fname" placeholder="First Name" required> <br>
+        <input class="input" type="text" name="lname" placeholder="Last Name" required><br>
+        <input class="input" type="email" name="email" placeholder="Email" required><br>
+        <input class="input" type="password" name="pass1" placeholder="Password" required><br>
+        <input class="input" type="password" name="pass2" placeholder="Password Confirm" required><br>
         <div class="submitWrap"><input style="background-color: #f8f3ed;"  class="button is-light sub" type="submit"></div><br>
         <label>{{msg}}</label>
     </form>
@@ -32,5 +32,6 @@
 </div>
 </div>
 </div>
+<div style="width: 100%; height:100%;z-index:-999;position: absolute; background-color: #f8f3ed;left: 0;bottom: 0;;"></div>
 </body>
 </html>

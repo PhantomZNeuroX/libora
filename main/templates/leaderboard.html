@@ -10,7 +10,7 @@
     <title>Leaderboards</title>
 </head>
 <body>
-    <nav>
+    <nav class="desk">
         <ul>
             <li>
                 <a href="/" class="NavBtn">
@@ -38,10 +38,10 @@
     </a>             
         </li>
                     <li>
-                <a href="/class" class="NavBtn">
+                <a href="/leaderboards" class="NavBtn">
            <div class="NavDiv">
             <svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-            Search
+            Leaderboards
         </div>
     </a>             
         </li>
@@ -56,9 +56,27 @@
         </li>
         </ul>        
     </nav>
+    <nav class="mobile">
+      <div class="navbar">
+          <div class="containerr nav-container">
+            <input class="checkbox HamMenu" type="checkbox" name="" id="" >
+            <div class="NavDiv">
+              <svg class="BtnIcon checkbox HamMenu" style="opacity: 1;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+              </div>
+              
+            <div class="menu-items" style="z-index: 123;">
+              <li><a href="/">Home</a></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/class">Class</a></li>
+              <li><a href="/leaderboards">Leaderboard</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </div>
+          </div>
+        </div>
+</nav>
     <div class="wrap">
     <h1 class="headTitle">Leaderboards</h1>
-
+    <div style="display: flex; width:100%;justify-content:center;align-items:center;">
     <div class="topBG">
         <div class="tab">
             <button id="glob" class="tablinks" onclick="openCity(event, 'global')">Global</button>
@@ -74,9 +92,9 @@
               </li>
               {% for x in global %}
               <li class="table-row">
-                <div class="col col-1" data-label="Job Id">{{forloop.counter}}</div>
-                <div class="col col-2" data-label="Customer Name">{{x.user.first_name}} {{x.user.last_name}}</div>
-                <div class="col col-3" data-label="Amount">{{x.score}}</div>
+                <div class="col col-1" data-label="No.">{{forloop.counter}}</div>
+                <div class="col col-2" data-label="Student Name">{{x.user.first_name}} {{x.user.last_name}}</div>
+                <div class="col col-3" data-label="Score">{{x.score}}</div>
               </li>
               {% endfor %}
             </ul>
@@ -93,15 +111,15 @@
                   </li>
                   {% for x in local %}
                   <li class="table-row">
-                    <div class="col col-1" data-label="Job Id">{{x.user.id}}</div>
-                    <div class="col col-2" data-label="Customer Name">{{x.user.first_name}} {{x.user.last_name}}</div>
-                    <div class="col col-3" data-label="Amount">{{x.score}}</div>
+                    <div class="col col-1" data-label="No.">{{forloop.counter}}</div>
+                    <div class="col col-2" data-label="Student Name">{{x.user.first_name}} {{x.user.last_name}}</div>
+                    <div class="col col-3" data-label="Score">{{x.score}}</div>
                   </li>
                   {% endfor %}
                 </ul>
               </div>
     </div>
-
+    </div>
     </div>
 
     <script>
