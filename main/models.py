@@ -36,9 +36,9 @@ class profile(models.Model):
 class clas(models.Model):
     teacher = models.OneToOneField(teacher, on_delete=models.CASCADE)
     name = models.CharField(null=True,max_length=40)
-    code = models.CharField(default= shortuuid.ShortUUID().random(length=5), editable=True, max_length=5)
+    code = models.CharField(default= shortuuid.ShortUUID().random(length=5).upper(), editable=True, max_length=5)
     students = models.ManyToManyField(User, null=True)
-    goal = models.IntegerField()
+    goal = models.IntegerField(default=10000)
     avg = models.DecimalField(null=True,max_digits=19,decimal_places=2)
     def __str__(self):
         return self.name

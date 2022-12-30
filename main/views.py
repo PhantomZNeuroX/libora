@@ -20,7 +20,7 @@ volumes = 'https://www.googleapis.com/books/v1/volumes'
 book_key = 'AIzaSyDKQ51Yqk5pb7gTjdLoa5M5rzTGe6ZMBDo'
 
 def landing(request):
-    return HttpResponse('Landing Page')
+    return render(request, 'landingpage.html')
 
 def register(request):
     if request.method == 'POST':
@@ -48,7 +48,7 @@ def registerT(request):
             if post['pass1'] == post['pass2']:
                 user = User.objects.create_user(username=post['email'], first_name=post['fname'], email=post['email'], last_name=post['lname'], password=post['pass1'])
                 teach = teacher.objects.create(user=user,school=post['school'])
-                clas.objects.create(teacher=teach, name=teacher.user.first_name + "'s Class")
+                clas.objects.create(teacher=teach, name=teach.user.first_name + "'s Class")
                 return redirect('/login')
             else:
                 return render(request,'Register Land.html', {"msg":"Passwords do not match"})
@@ -61,13 +61,13 @@ def JoinClass(request):
         post = request.POST
         user = User.objects.get(email=request.user.email)
         try:
-            join = clas.objects.get(code=post['code'])
+            join = clas.objects.get(code=post['code'].upper())
             join.students.add(user)
             prof = profile.objects.get(user=user)
             prof.clas = join
             prof.save()
             print(join.students.all())
-            return redirect('/')
+            return redirect('/dashboard')
         except:
             return render(request,'JoinClass.html',{'msg':'Incorrect Code'})
     else:
@@ -116,8 +116,10 @@ def dashboard(request):
     print(classs)
     try:
         goal = classs.goal
+        no = 0
     except:
-        pass
+        goal = 1
+        no = 1
     try:
         readDay=reading_day.objects.get(user=user, date=datetime.date.today())
         read = readDay.words
@@ -143,7 +145,7 @@ def dashboard(request):
     print(filtered)
     
     
-    return render(request, 'dashboard.html', {'books':filtered[:4], 'deg': deg, 'percent':percent, 'read':read, 'words':prof.words})
+    return render(request, 'dashboard.html', {'books':filtered[:4], 'deg': deg, 'percent':percent, 'read':read, 'words':prof.words, 'no':no})
 
 def dashboardT(request):
     if not request.user.is_authenticated:
@@ -418,9 +420,10 @@ def classView(request):
 
 def StudentView(request, id):
     user = User.objects.get(id=id)
+    teach = User.objects.get(id=request.user.id)
     if not request.user.is_authenticated:
         return redirect('/login')
-    if not teacher.objects.filter(user=user):
+    if not teacher.objects.filter(user=teach):
         return redirect('/dashboard')
     try:
         prof = profile.objects.get(user=user)

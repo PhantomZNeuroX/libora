@@ -81,7 +81,7 @@
     <div class="TopCard">
         <div class="topBG"></div>
         <div class="topWrap" style="height: 14em;">
-
+        {% if no == 0 %}
         {% for x in books %}
         <div class="Book">
             <div class="sideName">
@@ -107,6 +107,17 @@
 
         </div>
         {% endfor %}
+        {% elif no == 1  %}
+        <div class="join">
+            <center>
+            <h1 style="margin-top: 0.1em; margin-bottom: 0.58em;" class="joinC">Please Join a class</h1>
+            
+            <a href="/class/join" class="joinB NavBtn">Join Class</a>
+            
+        </center>
+        </div>
+        {% endif %}
+
     </div>
     </div>
     <div class="bottom">
@@ -137,6 +148,7 @@
     
     
     <div class="topWrap">
+    {% if no == 0 %}
     {% for x in books %}
     <div class="BookM">
         <a href="/class/book/{{x.id}}" style="text-decoration: none;">
@@ -146,6 +158,16 @@
         <a href="/class/book/{{x.id}}" class="btnM">Page</a>
     </div>
     {% endfor %}
+    {% elif no == 1  %}
+    <div class="join" style="width: 80vw;">
+        <center>
+        <h1 style="margin-top: 0.7em; margin-bottom: 0.6em;" class="joinC">Please Join a class</h1>
+        
+        <a href="/class/join" class="joinB NavBtn">Join Class</a>
+        
+    </center>
+    </div>
+    {% endif %}
 
 </div>
 

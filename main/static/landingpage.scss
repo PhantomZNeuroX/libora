@@ -1,0 +1,298 @@
+
+$text: #2c1810;
+$accent: #cca05e;
+$BG: #f8f3ed;
+$nav: #f8f3ed;
+
+.NavBtn{
+   
+    color: $accent;
+    vertical-align: middle;
+    text-decoration: none;
+    
+}
+.NavDiv{
+//    background-color: $accent;
+   padding: 0.7em 1.4em;
+//    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;p
+    font-weight: bold;
+    display: flex;
+    border-radius: 10em;
+    align-items: center;
+    transition-duration: 0.2s;
+    opacity: 0.6;
+    &:hover{
+        opacity: 1;
+        transition-duration: 0.2s;
+    }
+}
+.BtnIcon{
+    aspect-ratio: 1;
+    padding-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    path{
+        fill: $accent;
+    }
+}
+*{
+    padding: 0;
+    font-family: 'Montserrat';
+    margin: 0;
+}
+body{
+    font-family: 'Montserrat';
+    background-color: $nav;
+    overflow-x: hidden;
+}
+nav{
+    background-color: $nav;
+    width: 100vw;
+    height: 8vh;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 3px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        width: 60vw;
+        li{
+            list-style: none;
+        }
+    }
+
+}
+
+.mobile{
+    display: none;
+}
+
+@media screen and (max-width:800px){
+    .desk{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
+
+.line {
+    position: absolute;
+    left: -16.7vw;
+    top: -19vw;
+    rotate: 25deg;
+    
+    z-index: -21;
+    -webkit-animation-name: line;
+    animation-name: line;
+    -webkit-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+    height: 68vw;
+  }
+  
+  .line1 {
+    position: absolute;
+    left: -12.7vw;
+    top: -13em;
+    rotate: 25deg;
+    height: 67em;
+    z-index: -25;
+    -webkit-animation-name: line;
+    animation-name: line;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    aspect-ratio: 1;
+    height: 62vw;
+  }
+  
+  .line2 {
+    
+    position: absolute;
+    right: -18.7em;
+    bottom: -39em;
+    rotate: -200deg;
+    height: 67em;
+    z-index: -21;
+    -webkit-animation-name: line3;
+    animation-name: line3;
+    -webkit-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+  }
+  
+  .line3 {
+    position: absolute;
+    right: -19.7em;
+    bottom: -39em;
+    rotate: -200deg;
+    height: 67em;
+    z-index: -21;
+    -webkit-animation-name: line3;
+    animation-name: line3;
+    -webkit-animation-duration: 1.1s;
+    animation-duration: 1.1s;
+  }
+  
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+  }
+
+  
+@-webkit-keyframes line {
+    0% {
+      left: -80%;
+      rotate: -100deg;
+    }
+  }
+  
+  @keyframes line {
+    0% {
+      left: -80%;
+      rotate: -100deg;
+    }
+  }
+  
+  @-webkit-keyframes blob {
+    0% {
+      top: -80%;
+      rotate: -100deg;
+    }
+  }
+  
+  @keyframes blob {
+    0% {
+      top: -80%;
+      rotate: -100deg;
+    }
+  }
+  
+  @-webkit-keyframes line3 {
+    0% {
+      right: -80%;
+      rotate: -100deg;
+    }
+  }
+  
+  @keyframes line3 {
+    0% {
+      right: -80%;
+      rotate: -100deg;
+    }
+  }
+  
+  @-webkit-keyframes line1 {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes line1 {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .blob {
+    width: 70vw;
+    
+    position: absolute;
+    left: -19em;
+    top: -48vh;
+    z-index: -30;
+    -webkit-animation-name: blob;
+    animation-name: blob;
+    -webkit-animation-duration: 1.8s;
+    animation-duration: 1.8s;
+  }
+  
+  
+  svg#freepik_stories-kids-reading:not(.animated) .animable {opacity: 0;}svg#freepik_stories-kids-reading.animated #freepik--background-simple--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--Floor--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedLeft;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--Window--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--Plant--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomIn;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--Shelves--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomOut;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--Books--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--character-3--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideLeft;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--character-2--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomIn;animation-delay: 0s;}svg#freepik_stories-kids-reading.animated #freepik--character-1--inject-11 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideLeft;animation-delay: 0s;}            @keyframes slideUp {                0% {                    opacity: 0;                    transform: translateY(30px);                }                100% {                    opacity: 1;                    transform: inherit;                }            }                    @keyframes lightSpeedLeft {              from {                transform: translate3d(-50%, 0, 0) skewX(20deg);                opacity: 0;              }              60% {                transform: skewX(-10deg);                opacity: 1;              }              80% {                transform: skewX(2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes zoomIn {                0% {                    opacity: 0;                    transform: scale(0.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }                    @keyframes zoomOut {                0% {                    opacity: 0;                    transform: scale(1.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }                    @keyframes slideRight {                0% {                    opacity: 0;                    transform: translateX(30px);                }                100% {                    opacity: 1;                    transform: translateX(0);                }            }                    @keyframes slideLeft {                0% {                    opacity: 0;                    transform: translateX(-30px);                }                100% {                    opacity: 1;                    transform: translateX(0);                }            }        
+
+  .svg1{
+    width: 50vw;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+  }
+
+.sec1{
+  position: relative;
+  width: 100%;
+  height: 92vh;
+}
+
+
+
+.wrap{
+  width:41em;
+  margin-left: 9.3vw;
+}
+.logo{
+  animation-name: appear;
+  animation-duration: 4s;
+  width: 24vw;
+  margin-top: 9em;
+}
+.wrap-text{
+    font-weight: bold;
+}
+.svg2{
+  width: 45vw;
+  position: absolute;
+  left: 1.8em;
+  bottom: 4em;
+}
+
+.blob2{
+  position: absolute;
+  right: 1vw;
+  width: 55vw;
+  z-index: -60;  
+  bottom: 5.5vh;
+  rotate: 15deg;
+  object-fit: fill;
+  height: 43vw;
+}
+
+.p2{
+  
+  position:absolute;
+  right: 10vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+p{
+  font-size: 3vh;
+  width: 30vw;
+}
+
+.p3{
+  width: 30vw;
+  position:absolute;
+  left: 10vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bottom-curve{
+  path{
+    width: 100vw;
+  }
+  z-index: -100;
+}

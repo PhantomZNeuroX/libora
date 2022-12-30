@@ -601,4 +601,10 @@ display: flex;
 .HamMenu {
   margin-left: 85%;
   margin-top: 0.05em;
+}
+
+.joinB {
+  background-color: #f0e5d3;
+  padding: 0.4em 0.8em;
+  border-radius: 0.4em;
 }/*# sourceMappingURL=dashboard.css.map */
