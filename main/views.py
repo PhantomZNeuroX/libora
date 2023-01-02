@@ -14,7 +14,8 @@ from bs4 import BeautifulSoup
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 import datetime
-
+from django.conf import settings
+from django.core.mail import send_mail
 
 volumes = 'https://www.googleapis.com/books/v1/volumes'
 book_key = 'AIzaSyDKQ51Yqk5pb7gTjdLoa5M5rzTGe6ZMBDo'

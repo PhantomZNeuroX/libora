@@ -4,6 +4,9 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
+from django.contrib.auth import views as auth_views 
+
+#path('accounts/', include('django.contrib.auth.urls')),
 
 urlpatterns = [
     path('',views.landing),
@@ -24,5 +27,6 @@ urlpatterns = [
     path('leaderboards', views.leaderboard),
     path('class', views.classView),
     path('class/student/<id>', views.StudentView),
-    path('request/goal', views.read_goal)
+    path('request/goal', views.read_goal),
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
