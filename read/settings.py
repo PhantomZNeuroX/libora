@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q)w8$8i=j1qz8tp7n95^m12$r-mw@yev@clst9r&75=(lgsqr-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['vercel.app', 'libora.in', 'localhost']
 
 
 # Application definition
