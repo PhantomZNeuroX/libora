@@ -57,23 +57,26 @@
         </ul>        
     </nav>
     <nav class="mobile">
-      <div class="navbar">
-          <div class="containerr nav-container">
-            <input class="checkbox HamMenu" type="checkbox" name="" id="" >
-            <div class="NavDiv">
-              <svg class="BtnIcon checkbox HamMenu" style="opacity: 1;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
-              </div>
-              
-            <div class="menu-items" style="z-index: 123;">
-              <li><a href="/">Home</a></li>
-              <li><a href="/dashboard">Dashboard</a></li>
-              <li><a href="/class">Class</a></li>
-              <li><a href="/leaderboards">Leaderboard</a></li>
-              <li><a href="/logout">Logout</a></li>
+      <div class="navmobile">
+        <div class="toggleMenu"><svg width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#cda260" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></div>
+        <div class="sidemenu">
+            <!-- <img class="cross" src="https://lh3.googleusercontent.com/iY0bTr9W_jdRLrqwXshfmqbflUi1Rlo2knWWLvQ5g-V-xdvByUrRtV7DVGYQ9VuK5A_h-AbHFxum1zubtabYAzgLOwGrIMaLPuJarkYHWm6a7h5HMIkhwlYhSBLq8JoW2MsDDRvyYzZMbesUr2EvqNW6yQTzygJbapw8hvxZo4e7t2u6v6_ptGmbmlCP6s0mV3jIHhca4TvQEp_UyGV6hhVzSmb0KhqguSpzdcPv3Z7G3-4tK88y6wtCUp1FKBfZkeBlHiSrBchIC8dDGNx4EvSC3_nd17x-vQRu9LlZWvM9KUbBdGMwSQKHXH7Uw9wtuqRVzQ2To024bFayR2uGAQ0MoM1YsFUStFB0NV_mJ_AtLSljfoAph0hu7uozenJASjI8oj2w1xtYrB3L0rcIBzOjC4R0bOw_jB5KOhYz7bB-LZax-KUvnrvaQS9LqG3UCEXzLdO81_mFWV_1pAuPv4DxFap8f5_WQy0-iyhq_76GRGswm2_pA1QwNlGtDgFZd2nqz36LBcbuuV8V3FELFOVZe_4KXULgcoFqL0zdhfEW4jhF28oGJ6ErnThvTMb6VR6_GknX5_2smz3cd9Yc6kkHv0pklcvFbKGIJpw9wrYYB8r5DOVxmGR0u7u5x-ZQoRjpwlhMHSNKAW4u4FeHnZYgJF6-_guWZwIWO1s7=s256-no" width="20"> -->
+            <svg class="cross" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#cca05e" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+            <div class="mobilelogoinsidebar">
+                <h1><a href="#"></a></h1>
             </div>
-          </div>
+            <ul class="navlistmobile">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/class">Class</a></li>
+                <li><a href="/leaderboards">Leaderboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+            
         </div>
-</nav>
+      </div>
+      </nav>
+      
     <div class="wrap">
     <h1 class="headTitle">Leaderboards</h1>
     <div style="display: flex; width:100%;justify-content:center;align-items:center;">
@@ -121,7 +124,76 @@
     </div>
     </div>
     </div>
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+      $(document).ready(function(){
+  
+  console.log($('.navlist li'));
+  
+  /************************ to highlight on which section you are ****************/
+  
+  $(".navlist li").click(function(){
+    $(this).addClass("iamselected");
+    $(".navlist li").not(this).removeClass("iamselected");  
+  });
+  
+  /********************* highlight active link when scrolled **************************/
+  
+  $(window).scroll(function(){
+    console.log( $(this).scrollTop());
+    $('.page').each(function(){
+      var sectionoffset = $(this.hash).offset().top;   // saves dist of that hash trom top
+      if(sectionoffset <= $(this).scrollTop()){
+        $(this).addClass('iamselected');
+      }			
+  
+    });
+  });
+  
+  
+  /**************** to change from trans to black when scrolled *************/
+  
+  console.log( $(document).scrollTop() );
+  
+  $(document).scroll(function(){
+    if( $(document).scrollTop() > 95 )
+    {
+      $('.navwrapper').addClass("notonhomepage");
+      $('.logo').addClass("hideme");
+    }
+    else{
+      $('.navwrapper').removeClass("notonhomepage");
+      $('.logo').removeClass("hideme");
+    }
+  
+  });
+  /******************** hide n show nav *************************/
+  
+  $('.toggleMenu').click(function(){
+    $('.sidemenu').addClass("showmenu");
+    $('.toggleMenu').addClass("changeopacity");
+  });
+  
+  $('.cross').click(function(){
+    $('.sidemenu').removeClass("showmenu");
+    $('.toggleMenu').removeClass("changeopacity");
+  });
+  
+  /************************* menu scales when scrolled ****************************/
+  $(document).scroll(function(){
+    if( $(document).scrollTop() > 250 )
+    {
+      $('.mobilelogo').addClass("hideme");
+      $('.toggleMenu').css('padding','9px 12px 9px 9px');
+    }
+    else{
+      $('.mobilelogo').removeClass("hideme");
+      $('.toggleMenu').css('padding','15px 20px 15px 15px');
+    }
+  
+  });
+  });
+    </script>
     <script>
     window.onload = document.getElementById('glob').click();
     function openCity(evt, cityName) {

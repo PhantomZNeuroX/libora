@@ -209,7 +209,7 @@ nav{
   }
 
   .blob {
-    width: 70vw;
+    width: 65%;
     
     position: absolute;
     left: -19em;
@@ -282,7 +282,7 @@ nav{
 .logo1{
   animation-name: appear;
   animation-duration: 4s;
-  width: 24vw;
+  width: 60%;
   z-index: -10;
   margin-top: 9em;
   position: relative;
@@ -309,7 +309,6 @@ nav{
 }
 
 .p2{
-  
   position:absolute;
   right: 10vw;
   top: 50%;
@@ -455,38 +454,81 @@ p{
   }
 }
 
-@media screen and (max-width:800px){
-  .foot-wrap{
-    transform: translateY(10%);
-  } 
-}
-
 .socials{
   margin: 1em;
 }
 
+@media screen and (max-width:1100px){
+  
 
+.blob{
+  width: 92%;
+}
+.line{
+  height: 74vw;
+}
+.line1{
+  height: 70vw;
+}
+.svg1{
+  width: 54.5vw;
+}
+.foot-wrap{
+  transform: translateY(-14%);
+} 
+}
 @media screen and (max-width:800px){
+  
+  .foot-wrap{
+    transform: translateY(2%);
+  } 
   .line{
-    height: 68vh;
+    height: 86vh;
   }
   .blob{
-    top: -18vh;
+    top: -32vh;
     left:-16em;
     z-index: -1200;
     width: 105vh;
   }
   .logo1{
-    width: 82vw;
+    width: 80vw;
   }
   .line1{
-    height: 62vh;
+    height: 78vh;
   }
   .desk{
     display: none;
   }
   .mobile{
     display: block;
+  }
+  .title-big{
+    font-size: 25vw;
+    margin: 0;
+  }
+  .p2{
+    position: static;
+    transform: none;
+  }
+  .svg2{
+    position: static;
+    width: 90vw;
+    transform: none;
+    margin-top: 4vh;
+  }
+  .sec2{
+    position: relative;
+    width: 100%;
+    height: 22vh;
+  }
+  p{
+    font-size: 3vh;
+    width: 80vw;
+    text-align: center;
+  }
+  .svg1{
+    width: 85vw;
   }
   }
   
@@ -650,4 +692,134 @@ p{
   .HamMenu{
   margin-left: 85%;
   margin-top: 0.05em;
+  }
+
+  @media screen and (max-width:800px){
+    .testimonial-card-container{
+      width: 92%;
+    }
+    .wrap5{
+      width: 100%;
+    }
+	.hideme{                      /* hides the logo after certain scroll*/
+		display: none;
+	}
+	.nav{
+		display: none;
+	}
+	.toggleMenu{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		padding: 15px 20px 15px 15px;
+		cursor: pointer;
+		background: #f8f3ed;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 3px;
+    width: 100vw;
+		opacity: 1;
+		transition: all 0.3s ease-in-out;
+    z-index: 999;
+	}
+
+	.sidemenu{
+    z-index: 9999;
+		position: fixed;
+		top: 0px;
+		width: 240px;
+		margin-left: -250px;
+		overflow: hidden;
+		height: 100vh;
+		background: #f8f3ed;  /* for opacity of side bar without affecting anything */
+		opacity: 0.9;                    /* to see background image*/
+		transition: all 0.3s ease-in-out;
+
+	}
+    a{
+        text-decoration: none;
+        color: #cca05e;
+    }
+	.cross{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+
+		cursor: pointer;
+		opacity: 0.7;
+
+		transition: all 0.3s ease-in-out;
+	}
+	.cross:hover{
+		opacity: 1;
+	}
+	.mobilelogoinsidebar h1 {
+		margin: 0;
+	    font-weight: 700;
+	    text-shadow: 3px 2px 0px #fff;
+	    line-height: 0.87;
+	}
+	.mobilelogoinsidebar a{
+		color: white;
+	}
+	.mobilelogoinsidebar{
+		margin-top: 70px;
+	}
+	.mobilelogo{
+		font-size: 2em;
+		margin: 0;
+	    font-weight: 700;
+	    text-shadow: 3px 2px 0px #fff;
+	    line-height: 0.87;
+	    margin-top: 20px;
+	    transition: all 10s ease-in-out;
+	}
+	.mobilelogo a{
+		color: white;
+	}
+	.navmobile{
+		width: 100vw;
+	}
+	.signup{
+		font-size: 1.6rem;
+		width: 200px;
+		padding: 3px 0px;
+		border: solid 1px white;
+		color: white;
+		text-align: center;
+		margin:30px auto 20px auto;
+		transition: all 0.3s ease-in-out;
+	}
+	.signup:hover{
+		background-color: white;
+		color: #111;
+		transition: all 0.3s ease-in-out;
+	}
+	.signup a:hover{
+		color: black;
+	}
+	.navmobile .navlistmobile{
+		font-size: 1.4rem;
+		margin:20px;
+		display: block;
+		width: 200px;
+		margin-left:auto;
+		margin-right: auto;
+	}
+	.navlistmobile li{
+		padding: 12px 0px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color: #D8D8D8;
+		border-bottom:solid 1px #D8D8D8;
+		cursor: pointer;
+
+		transition: all 0.3s ease-in-out;
+	}
+
+	.showmenu{
+		margin-left: 0px;
+	}
+
+	.changeopacity{
+		opacity: 0;
+	}
   }

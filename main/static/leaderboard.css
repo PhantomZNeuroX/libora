@@ -653,4 +653,121 @@ display: flex;
 .HamMenu {
   margin-left: 85%;
   margin-top: 0.05em;
+}
+
+@media screen and (max-width: 800px) {
+  .hideme { /* hides the logo after certain scroll*/
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+  .toggleMenu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 15px 20px 15px 15px;
+    cursor: pointer;
+    background: #f8f3ed;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 3px;
+    width: 100vw;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+  }
+  .sidemenu {
+    z-index: 9999;
+    position: fixed;
+    top: 0px;
+    width: 240px;
+    margin-left: -250px;
+    overflow: hidden;
+    height: 100vh;
+    background: #f8f3ed; /* for opacity of side bar without affecting anything */
+    opacity: 0.9; /* to see background image*/
+    transition: all 0.3s ease-in-out;
+  }
+  a {
+    text-decoration: none;
+    color: #cca05e;
+  }
+  .cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+  }
+  .cross:hover {
+    opacity: 1;
+  }
+  .mobilelogoinsidebar h1 {
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 3px 2px 0px #fff;
+    line-height: 0.87;
+  }
+  .mobilelogoinsidebar a {
+    color: white;
+  }
+  .mobilelogoinsidebar {
+    margin-top: 70px;
+  }
+  .mobilelogo {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 3px 2px 0px #fff;
+    line-height: 0.87;
+    margin-top: 20px;
+    transition: all 10s ease-in-out;
+  }
+  .mobilelogo a {
+    color: white;
+  }
+  .navmobile {
+    width: 100vw;
+  }
+  .signup {
+    font-size: 1.6rem;
+    width: 200px;
+    padding: 3px 0px;
+    border: solid 1px white;
+    color: white;
+    text-align: center;
+    margin: 30px auto 20px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .signup:hover {
+    background-color: white;
+    color: #111;
+    transition: all 0.3s ease-in-out;
+  }
+  .signup a:hover {
+    color: black;
+  }
+  .navmobile .navlistmobile {
+    font-size: 1.4rem;
+    margin: 20px;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navlistmobile li {
+    padding: 12px 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #D8D8D8;
+    border-bottom: solid 1px #D8D8D8;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .showmenu {
+    margin-left: 0px;
+  }
+  .changeopacity {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=leaderboard.css.map */
