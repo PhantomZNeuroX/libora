@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q)w8$8i=j1qz8tp7n95^m12$r-mw@yev@clst9r&75=(lgsqr-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vercel.app', 'libora.in', 'localhost']
+ALLOWED_HOSTS = ['vercel.app', 'libora.in', 'localhost', 'now.sh']
 
 
 # Application definition
@@ -89,9 +89,17 @@ CORS_ORIGIN_WHITELIST = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'smxdymhn', 
+        'USER': 'smxdymhn', 
+        'PASSWORD': 'dWzRqziQTy5JUreAU-fG6Hlw8ZRVJakz',
+        'HOST': 'rosie.db.elephantsql.com', 
+        'PORT': '5432',
     }
 }
 
@@ -131,8 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'staticfiles'
-
+#STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

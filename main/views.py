@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from ebooklib import epub
 import ebooklib
+from discord_webhook import DiscordEmbed, DiscordWebhook
 import os
 from django.contrib.auth.models import User
 from .models import clas, teacher, profile, ebook, reading_day, ReadBook
@@ -16,9 +17,12 @@ from django.views.decorators.csrf import csrf_exempt
 import datetime
 from django.conf import settings
 from django.core.mail import send_mail
+from django.template import loader
 
-volumes = 'https://www.googleapis.com/books/v1/volumes'
-book_key = 'AIzaSyDKQ51Yqk5pb7gTjdLoa5M5rzTGe6ZMBDo'
+# volumes = 'https://www.googleapis.com/books/v1/volumes'
+# book_key = 'AIzaSyDKQ51Yqk5pb7gTjdLoa5M5rzTGe6ZMBDo'
+dc_url = 'https://discord.com/api/webhooks/1061354446476550194/3-DpwpsKR1OQ0uuKyHltW6WI_AU1v47cRQgF7F0AfIcWwcadpGjRCi7WDQSZD9_tXGQS'
+
 
 def landing(request):
     return render(request, 'landingpage.html')
@@ -30,10 +34,21 @@ def register(request):
         #    return render(request,'Register Land.html', {"msg":"Please fill in all the fields"})
             print('tf')
             
+
         if not User.objects.filter(email=post['email']):
             if post['pass1'] == post['pass2']:
                 user = User.objects.create_user(username=post['email'], first_name=post['fname'], email=post['email'], last_name=post['lname'], password=post['pass1'])
                 prof = profile.objects.create(user=user)
+
+                html = loader.render_to_string('welcome.html')
+                send_mail('Welcome To Libora!','',settings.EMAIL_HOST_USER,[post['email']],fail_silently=True,html_message=html)
+                try:
+                    embed = DiscordEmbed(title='Libora', description=f'{post["fname"]} just Registered', color='ff3700')
+                    webhook = DiscordWebhook(url=dc_url)
+                    webhook.add_embed(embed)
+                    webhook.execute()
+                except:
+                    pass
                 return redirect('/login')
             else:
                 return render(request,'Register Land.html', {"msg":"Passwords do not match"})
@@ -45,11 +60,17 @@ def register(request):
 def registerT(request):
     if request.method == 'POST':
         post = request.POST
+        embed = DiscordEmbed(title='Libora', description='Teacher Registered', color='ff3700')
+        webhook = DiscordWebhook(url=dc_url)
+        webhook.add_embed(embed)
+        webhook.execute()
         if not User.objects.filter(email=post['email']):
             if post['pass1'] == post['pass2']:
                 user = User.objects.create_user(username=post['email'], first_name=post['fname'], email=post['email'], last_name=post['lname'], password=post['pass1'])
                 teach = teacher.objects.create(user=user,school=post['school'])
                 clas.objects.create(teacher=teach, name=teach.user.first_name + "'s Class")
+                html = loader.render_to_string('templates/welcome.html')
+                send_mail('Welcome To Libora!','',settings.EMAIL_HOST_USER,post['email'],fail_silently=True,html_message=html)
                 return redirect('/login')
             else:
                 return render(request,'Register Land.html', {"msg":"Passwords do not match"})

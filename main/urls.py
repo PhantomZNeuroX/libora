@@ -29,4 +29,5 @@ urlpatterns = [
     path('class/student/<id>', views.StudentView),
     path('request/goal', views.read_goal),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('password_reset/done/', auth_views.PasswordResetView.as_view(template_name='password-reset.html'), name='password_reset_done'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
