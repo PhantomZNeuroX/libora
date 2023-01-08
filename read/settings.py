@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q)w8$8i=j1qz8tp7n95^m12$r-mw@yev@clst9r&75=(lgsqr-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vercel.app', 'libora.in', 'localhost', 'now.sh']
+ALLOWED_HOSTS = ['railway.app', 'libora.in', 'localhost', 'now.sh', '.railway.app']
 
 
 # Application definition
@@ -146,7 +146,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-DEFAULT_PORT = os.environ['PORT']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
