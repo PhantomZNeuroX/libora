@@ -93,22 +93,26 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'postgres', 
+         'USER': 'postgres', 
+         'PASSWORD': 'IFGQQd2S43Z5moHg',
+         'HOST': 'db.esahctcqtcrzgnbmcxir.supabase.co', 
+         'PORT': '5432',
+     }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'smxdymhn', 
-    #     'USER': 'smxdymhn', 
-    #     'PASSWORD': 'dWzRqziQTy5JUreAU-fG6Hlw8ZRVJakz',
-    #     'HOST': 'rosie.db.elephantsql.com', 
-    #     'PORT': '5432',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'libora',
+    #     'USER': '0ys4hkrfff21u92x14vx',
+    #     'PASSWORD': 'pscale_pw_Hf65srOg1fWZhc0IICYL3GOB87ZprwOjxZV7M8MEnYE',
+    #     'HOST':'ap-south.connect.psdb.cloud',
+    #     'PORT':'3306',
+    #     'OPTIONS':  {
+    #         'ssl': '/etc/ssl/certs/ca-certificates.crt',
+    #           'charset': 'utf8mb4',
+    #         }
     # }
-        'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway', 
-        'USER': 'postgres', 
-        'PASSWORD': 'fDFWsmii0qWQatR5rf8C',
-        'HOST': 'containers-us-west-42.railway.app', 
-        'PORT': '6602',
-    }
 }
 
 
@@ -149,7 +153,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 #STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
