@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+  #  'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+ #   "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -151,10 +153,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATIC_ROOT = 'staticfiles'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles'),
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+#STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
