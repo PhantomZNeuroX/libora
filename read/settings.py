@@ -93,13 +93,21 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    'default': {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'smxdymhn', 
+    #     'USER': 'smxdymhn', 
+    #     'PASSWORD': 'dWzRqziQTy5JUreAU-fG6Hlw8ZRVJakz',
+    #     'HOST': 'rosie.db.elephantsql.com', 
+    #     'PORT': '5432',
+    # }
+        'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'smxdymhn', 
-        'USER': 'smxdymhn', 
-        'PASSWORD': 'dWzRqziQTy5JUreAU-fG6Hlw8ZRVJakz',
-        'HOST': 'rosie.db.elephantsql.com', 
-        'PORT': '5432',
+        'NAME': 'railway', 
+        'USER': 'postgres', 
+        'PASSWORD': 'fDFWsmii0qWQatR5rf8C',
+        'HOST': 'containers-us-west-42.railway.app', 
+        'PORT': '6602',
     }
 }
 
