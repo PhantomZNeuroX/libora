@@ -146,7 +146,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-DEFAULT_PORT = "8080"
+DEFAULT_PORT = os.environ['PORT']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
