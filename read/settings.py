@@ -80,9 +80,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'read.wsgi.application'
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'web-production-4cf3.up.railway.app', 'libora.in']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://web-production-4cf3.up.railway.app', 'https://libora.in','http://libora.in']
 CORS_ORIGIN_WHITELIST = (
-       'http://localhost:8000', 'web-production-4cf3.up.railway.app', 'libora.in'
+       'http://localhost:8000', 'https://web-production-4cf3.up.railway.app', 'https://libora.in','http://libora.in'
 )
 
 
