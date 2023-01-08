@@ -8,4 +8,4 @@ shortuuid==1.0.11
 gunicorn==20.1.0
 psycopg2==2.9.5
 django-cors-headers==3.13.0
-discord_webhook==2.19.1
+discord_webhook==1.0.0
