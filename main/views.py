@@ -416,6 +416,10 @@ def classView(request):
     elif teacher.objects.filter(user=user):
         teach = teacher.objects.get(user=user)
         classs = clas.objects.get(teacher=teach)
+
+    if classs == None:
+        return redirect('/dashboard')
+    
     lead = profile.objects.filter(clas=classs).order_by('-score')
     profs = profile.objects.filter(clas=classs).order_by('user')
     books = ebook.objects.filter(clas=classs)
