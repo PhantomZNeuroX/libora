@@ -184,7 +184,7 @@ App.prototype.loadSettingsFromStorage = function () {
 
 function SubForm (){
     $.ajax({
-        url: 'http://libora.in/book/progress/report',
+        url: 'https://libora.in/book/progress/report',
         type: 'post',
         data: $('#formInv').serialize(),
         success: function(){
@@ -198,7 +198,7 @@ function postTo(url, query) {
 }
 
 function sendTime(){
-    const url = 'http://libora.in/book/progress/report'
+    const url = 'https://libora.in/book/progress/report'
 
     /*
     var query = {
@@ -307,7 +307,7 @@ App.prototype.doOpenBook = function () {
     this.doBook(fi);
     window.onload = openn;
     function openn() {
-        this.doBook('http://libora.in/media/it-ends-with-us_Snj8Srh_2_sifLaDW.epub');
+        this.doBook('https://libora.in/media/it-ends-with-us_Snj8Srh_2_sifLaDW.epub');
         
         var reader = new FileReader();
         reader.addEventListener("load", () => {
@@ -318,7 +318,7 @@ App.prototype.doOpenBook = function () {
             }
             if (header == "504b") {
                 console.log('idklsda')
-                this.doBook('http://libora.in/media/it-ends-with-us_Snj8Srh_2_sifLaDW.epub');
+                this.doBook('https://libora.in/media/it-ends-with-us_Snj8Srh_2_sifLaDW.epub');
             } else {
                 this.fatal("invalid file", "not an epub book");
             }
