@@ -1,5 +1,5 @@
 beautifulsoup4==4.11.1
-Django==4.1.2
+Django==3.2.16
 django_ipware==4.0.2
 EbookLib==0.17.1
 geocoder==1.38.1
