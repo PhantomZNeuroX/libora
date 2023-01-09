@@ -334,7 +334,7 @@ def book(request,id):
 
     if prof.clas != bok.clas:
         return HttpResponse('404 Not Found')
-    bookurl = 'http://localhost:8000/media/'+ bok.book.name
+    bookurl = 'http://libora.in/media/'+ bok.book.name
     print(bookurl)
     return render(request, 'Epub.html', {'book':bok.id,'user':user.id, 'bookurl':bookurl})
 
