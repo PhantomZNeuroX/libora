@@ -9,3 +9,5 @@ gunicorn==20.1.0
 psycopg2==2.9.5
 django-cors-headers==3.13.0
 discord_webhook==1.0.0
+django-cloudinary-storage==0.3.0
+cloudinary==1.16.0
