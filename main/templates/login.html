@@ -2,46 +2,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="{% static 'login.css' %}">
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'leaderboard.css' %}">
+<!--===============================================================================================-->
+
     
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<nav class="desk" style="box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 3px;">
+    <ul>
+        <li>
+            <a href="/" class="NavBtn">
+                <div class="NavDiv">
+                <svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+                Home
+            </div>
+        </a>
+        </li>
+        <li>
+            
+            <a href="/dashboard" class="NavBtn">
+                <div class="NavDiv">
+                  <svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 358.4V25.6c0-16-9.6-25.6-25.6-25.6H96C41.6 0 0 41.6 0 96v320c0 54.4 41.6 96 96 96h326.4c12.8 0 25.6-9.6 25.6-25.6v-16q0-9.6-9.6-19.2c-3.2-16-3.2-60.8 0-73.6q9.6-4.8 9.6-19.2zM240 64a64 64 0 1 1-64 64 64 64 0 0 1 64-64zM128 281.6c0-31.81 30.09-57.6 67.2-57.6h5a103.25 103.25 0 0 0 79.7 0h4.95c37.11 0 67.2 25.79 67.2 57.6v19.2c0 10.61-10 19.2-22.4 19.2H150.4c-12.4 0-22.4-8.6-22.4-19.2zM380.8 448H96c-19.2 0-32-12.8-32-32s16-32 32-32h284.8z"/></svg>
+                  Dashboard
+            </div>
+        </a>
+        </li>
+        <li>
+            <a href="/class" class="NavBtn">
+       <div class="NavDiv">
+        <svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M256 288c0 35.35 28.66 64 64 64 35.35 0 64-28.65 64-64s-28.65-64-64-64c-35.34 0-64 28.65-64 64zm224 0c0 35.35 28.66 64 64 64 35.35 0 64-28.65 64-64s-28.65-64-64-64c-35.34 0-64 28.65-64 64zM96 352c35.35 0 64-28.65 64-64s-28.65-64-64-64c-35.34 0-64 28.65-64 64s28.66 64 64 64zm480 32h-64c-35.34 0-64 28.65-64 64v32c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32v-32c0-35.35-28.66-64-64-64zm-224 0h-64c-35.34 0-64 28.65-64 64v32c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32v-32c0-35.35-28.66-64-64-64zm-224 0H64c-35.34 0-64 28.65-64 64v32c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32v-32c0-35.35-28.66-64-64-64zM96 64h448v128c24.68 0 46.98 9.62 64 24.97V49.59C608 22.25 586.47 0 560 0H80C53.53 0 32 22.25 32 49.59v167.38C49.02 201.62 71.33 192 96 192V64z"/></svg>
+        Class
+    </div>
+</a>             
+    </li>
+                <li>
+            <a href="/leaderboards" class="NavBtn">
+       <div class="NavDiv">
+        <svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+        Leaderboards
+    </div>
+</a>             
+    </li>
+    <li>
+    <a class="NavBtn"  href="/login">
+        <div class="NavDiv">
+        <!--<svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>-->
+        <svg class="BtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+        Login
+        </div>
+    </a>
+    </li>
+    </ul>        
+</nav>
+<!-- <nav class="mobile">
+    <div class="navbar">
+        <div class="containerr nav-container">
+          <input class="checkbox HamMenu" type="checkbox" name="" id="" >
+          <div class="NavDiv">
+            <svg class="BtnIcon checkbox HamMenu" style="opacity: 1;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </div>
+            
+          <div class="menu-items" style="z-index: 123;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/class">Class</a></li>
+            <li><a href="/leaderboards">Leaderboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </div>
+        </div>
+      </div>
+</nav> -->
+<nav class="mobile">
+<div class="navmobile">
+<div class="toggleMenu"><svg width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#cda260" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></div>
+<div class="sidemenu">
+  <!-- <img class="cross" src="https://lh3.googleusercontent.com/iY0bTr9W_jdRLrqwXshfmqbflUi1Rlo2knWWLvQ5g-V-xdvByUrRtV7DVGYQ9VuK5A_h-AbHFxum1zubtabYAzgLOwGrIMaLPuJarkYHWm6a7h5HMIkhwlYhSBLq8JoW2MsDDRvyYzZMbesUr2EvqNW6yQTzygJbapw8hvxZo4e7t2u6v6_ptGmbmlCP6s0mV3jIHhca4TvQEp_UyGV6hhVzSmb0KhqguSpzdcPv3Z7G3-4tK88y6wtCUp1FKBfZkeBlHiSrBchIC8dDGNx4EvSC3_nd17x-vQRu9LlZWvM9KUbBdGMwSQKHXH7Uw9wtuqRVzQ2To024bFayR2uGAQ0MoM1YsFUStFB0NV_mJ_AtLSljfoAph0hu7uozenJASjI8oj2w1xtYrB3L0rcIBzOjC4R0bOw_jB5KOhYz7bB-LZax-KUvnrvaQS9LqG3UCEXzLdO81_mFWV_1pAuPv4DxFap8f5_WQy0-iyhq_76GRGswm2_pA1QwNlGtDgFZd2nqz36LBcbuuV8V3FELFOVZe_4KXULgcoFqL0zdhfEW4jhF28oGJ6ErnThvTMb6VR6_GknX5_2smz3cd9Yc6kkHv0pklcvFbKGIJpw9wrYYB8r5DOVxmGR0u7u5x-ZQoRjpwlhMHSNKAW4u4FeHnZYgJF6-_guWZwIWO1s7=s256-no" width="20"> -->
+  <svg class="cross" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#cca05e" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+  <div class="mobilelogoinsidebar">
+      <h1><a href="#"></a></h1>
+  </div>
+  <ul class="navlistmobile">
+      <li><a href="/">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/class">Class</a></li>
+      <li><a href="/leaderboards">Leaderboard</a></li>
+      <li><a href="/login">Login</a></li>
+  </ul>
+  
+</div>
+</div>
+</nav>
 </head>
+<body>
 
 
-<body style="width: 100%; height: 100%;">
-    <div class="card" style="border-radius: 1em;">
-        <div class="card-content" style="background-color: #f0e5d3;">
-          <div class="content">
-        <form action="/login" method="POST" enctype="multipart/form-data">
-          {% csrf_token %}
-        <h1 class="titl" style="font-family: 'Poppins', sans-serif; font-weight:700;">Login</h1>
-        <input class="input" type="email" name="email" placeholder="Email" required> <br>
-        <input class="input" type="password" name="pass" placeholder="Password" required><br>
-        <div class="submitWrap">
-              
-             <input style="background-color: #f8f3ed;" type="submit"  class="button is-light sub" value="Login">
-             <div class="msg">
-              <a href="/register">Register</a> <br>
-              <a href="/accounts/password_reset">Forgot Password</a>
-              <br>
-              <br>
-             <label>{{msg}}</label>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100" style=" box-shadow:0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%)">
+                <div class="wrap-login200">
+                    
+                    <form action="/login" method="POST" class="login100-form validate-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+					<span class="login100-form-title">
+                        Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+                        <a class="txt2" href="/accounts/password_reset/">
+							Forgot
+							Username / Password?
+						</a> <br> <br>
+                        <label class="txt2">{{msg}}</label>
+					</div>
+
+					<div class="text-center">
+						<a class="txt2" href="/register">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
             </div>
-            </div>
-             
         
-    </form>
-</div>
-</div>
-</div>
-<div style="width: 100%; height:100%;z-index:-999;position: absolute; background-color: #f8f3ed;left: 0;bottom: 0;;"></div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script>
+        
+(function ($) {
+    "use strict";
+
+    
+    /*==================================================================
+    [ Validate ]*/
+    var input = $('.validate-input .input100');
+
+    $('.validate-form').on('submit',function(){
+        var check = true;
+
+        for(var i=0; i<input.length; i++) {
+            if(validate(input[i]) == false){
+                showValidate(input[i]);
+                check=false;
+            }
+        }
+
+        return check;
+    });
+
+
+    $('.validate-form .input100').each(function(){
+        $(this).focus(function(){
+           hideValidate(this);
+        });
+    });
+
+    function validate (input) {
+        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+                return false;
+            }
+        }
+        else {
+            if($(input).val().trim() == ''){
+                return false;
+            }
+        }
+    }
+
+    function showValidate(input) {
+        var thisAlert = $(input).parent();
+
+        $(thisAlert).addClass('alert-validate');
+    }
+
+    function hideValidate(input) {
+        var thisAlert = $(input).parent();
+
+        $(thisAlert).removeClass('alert-validate');
+    }
+    
+    
+
+})(jQuery);
+    </script>
+
 </body>
 </html>
