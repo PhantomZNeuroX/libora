@@ -1,0 +1,1 @@
+THIS IS A TEST, static is under main

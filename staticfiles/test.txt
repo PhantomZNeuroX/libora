@@ -1,0 +1,1 @@
+THIS IS A TEST, staticfiles folder under root dir
