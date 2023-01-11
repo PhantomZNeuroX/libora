@@ -362,9 +362,6 @@ nav{
 
 
 @media (max-width: 992px) {
-  .wrap-login100 {
-    padding: 177px 90px 33px 85px;
-  }
 
   .login100-pic {
     width: 35%;
@@ -374,7 +371,7 @@ nav{
 
 @media (max-width: 768px) {
   .wrap-login100 {
-    padding: 100px 80px 33px 80px;
+    padding: 100px 15px 33px 15px;
   }
 
   .login100-pic {
@@ -389,7 +386,10 @@ nav{
 @media (max-width: 576px) {
   .wrap-login100 {
     padding: 100px 15px 33px 15px;
+    width: auto;
   }
+  
+
 }
 
 
