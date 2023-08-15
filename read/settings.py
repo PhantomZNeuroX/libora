@@ -31,9 +31,9 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dql5bh1kg',
-    'API_KEY': '575416512764878',
-    'API_SECRET': 'hR19gnr2j7mYSgQY1k4mNoUxqmk',
+    'CLOUD_NAME': '',
+    'API_KEY': '',
+    'API_SECRET': '',
 }
 
 INSTALLED_APPS = [
@@ -65,8 +65,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'in.libora@gmail.com'
-EMAIL_HOST_PASSWORD = 'klkwyijifkzpgygu'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 ROOT_URLCONF = 'read.urls'
 
@@ -98,30 +98,10 @@ CORS_ORIGIN_WHITELIST = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-    'default': {
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'postgres', 
-         'USER': 'postgres', 
-         'PASSWORD': 'IFGQQd2S43Z5moHg',
-         'HOST': 'db.esahctcqtcrzgnbmcxir.supabase.co', 
-         'PORT': '5432',
-     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'libora',
-    #     'USER': '0ys4hkrfff21u92x14vx',
-    #     'PASSWORD': 'pscale_pw_Hf65srOg1fWZhc0IICYL3GOB87ZprwOjxZV7M8MEnYE',
-    #     'HOST':'ap-south.connect.psdb.cloud',
-    #     'PORT':'3306',
-    #     'OPTIONS':  {
-    #         'ssl': '/etc/ssl/certs/ca-certificates.crt',
-    #           'charset': 'utf8mb4',
-    #         }
-    # }
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
